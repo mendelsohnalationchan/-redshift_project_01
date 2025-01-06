@@ -1,0 +1,21 @@
+name: 'redshift_project_01'
+version: '1.0.0'
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'redshift_project_01'
+
+# Paths configuration
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  redshift_project_01:
+    +materialized: view  # Applies to all models in the project
